@@ -15,6 +15,7 @@ isTruthy(NaN)
 isTruthy(null)
 isTruthy("")
 isTruthy('')
+isTruthy(undefined)
 isTruthy(false)
 
 /*
