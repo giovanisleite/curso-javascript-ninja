@@ -7,7 +7,7 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-var isTruthy = function (a) { return Boolean(a)}
+var isTruthy = function (a) { return Boolean(a)} //!!a
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(0)
