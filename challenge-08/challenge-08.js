@@ -87,7 +87,9 @@ function calculator(operator) {
       };
       break;
     default:
-      console.log("Operação inválida.");
+      return function() {
+        return "Operação inválida.";
+      };
   }
 }
 
