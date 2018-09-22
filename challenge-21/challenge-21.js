@@ -20,23 +20,23 @@ dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
   var $stop = document.querySelector('[data-js="stop"]');
   var $reset = document.querySelector('[data-js="reset"]');
   var $time = document.querySelector('[data-js="time"]');
+  var cronometer;
 
-  function startTime() {
+  var startTimer = () => {
     cronometer = setTimeout(() => {
       $time.value = parseInt($time.value, 10) + 1;
-      startTime();
+      startTimer();
     }, 1000);
-  }
+  };
 
-  var cronometer;
-  $start.addEventListener("click", () => startTime());
+  var stopTimer = () => clearTimeout(cronometer);
 
-  $stop.addEventListener("click", () => {
-    clearTimeout(cronometer);
-  });
+  $start.addEventListener("click", () => startTimer());
+
+  $stop.addEventListener("click", stopTimer);
 
   $reset.addEventListener("click", () => {
     $time.value = 0;
-    clearTimeout(cronometer);
+    stopTimer();
   });
 })(window, document);
